@@ -12,4 +12,4 @@ Otherwise modify `visualize.bat` to point to the Python script and `stats` folde
 ## Requirements
 Python-x64 must be installed on Windows in order to avoid 32-bit integer errors.  
 
-Run `pip/pip3 install -r requirements.txt` in order to install the required Python packages. 
+Run `pip install -r requirements.txt` in order to install the required Python packages. 
