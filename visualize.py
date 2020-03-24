@@ -37,13 +37,15 @@ for file in files:
 
 rows = int(math.ceil(len(d)/5)) if int(math.ceil(len(d)/5)) != 0 else 1
 columns = math.ceil(len(d)/rows)
+column = 0
 fig, axes = plt.subplots(rows, columns, figsize=(12, 6), squeeze=False)
 fig.tight_layout(h_pad=5, w_pad=0)
 for i, key in enumerate(d.keys()):
     values = d[key]
     scores = [d['score'] for d in values]
     dates = [d['date'] for d in values]
-    ax = axes[i % rows][i % columns]
+    ax = axes[i % rows][column]
+    column = column + 1 if i % rows != 0 else column
     sns.regplot(dates, scores, order=2, label=key, ax=ax)
     xticks = ax.get_xticks()
     ax.set_xticklabels([datetime.fromtimestamp(tm).strftime('%Y-%m-%d') for tm in xticks],

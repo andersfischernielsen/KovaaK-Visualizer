@@ -1,0 +1,1 @@
+START /MIN python "%userprofile%\Documents\visualize.py" "C:\Program Files (x86)\Steam\steamapps\common\FPSAimTrainer\FPSAimTrainer\stats"
