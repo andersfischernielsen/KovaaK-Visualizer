@@ -44,8 +44,8 @@ for i, key in enumerate(d.keys()):
     values = d[key]
     scores = [d['score'] for d in values]
     dates = [d['date'] for d in values]
-    ax = axes[i % rows][column]
-    column = column + 1 if i % rows != 0 else column
+    ax = axes[i % rows][column - 1]
+    column = column + 1 if i % rows == 0 else column
     sns.regplot(dates, scores, order=2, label=key, ax=ax)
     xticks = ax.get_xticks()
     ax.set_xticklabels([datetime.fromtimestamp(tm).strftime('%Y-%m-%d') for tm in xticks],
